@@ -93,7 +93,7 @@ public class Server {
 
         @Override
         public void run() {
-            System.out.println("线程启动"+Thread.currentThread().getId());
+            System.out.println("线程启动"+Thread.currentThread().getName());
             BufferedReader reader = null;
             PrintWriter writer = null;
 
@@ -108,6 +108,7 @@ public class Server {
                     String answer = getAnswer(question);
                     writer.println(answer);
                     question = reader.readLine();
+                    System.out.println("收到客户端信息:"+question);
                 }
 
                 writer.println("OVER");// OVER作为操作完成暗号
