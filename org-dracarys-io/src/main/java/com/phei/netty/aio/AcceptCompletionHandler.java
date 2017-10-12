@@ -22,7 +22,7 @@ import java.nio.channels.CompletionHandler;
 /**
  * @author lilinfeng
  * @date 2014年2月16日
- * @version 1.0
+ * @version 1.0 
  */
 public class AcceptCompletionHandler implements
 	CompletionHandler<AsynchronousSocketChannel, AsyncTimeServerHandler> {
