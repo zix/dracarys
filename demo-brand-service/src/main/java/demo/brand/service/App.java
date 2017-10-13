@@ -1,8 +1,14 @@
 package demo.brand.service;
 
+import demo.brand.service.server.NettyServer;
+import demo.brand.service.server.ServiceManager;
+
 
 public class App {
-	public static void main(String[] args) {
-		System.out.println("Hello World!");
+	public static final int PORT = 8080;
+	public static void main(String[] args) throws Exception{
+		ServiceManager.init();
+	    new NettyServer().bind(PORT);
+	    System.out.println("服务器启动成功,port=" + PORT);
 	}
 }

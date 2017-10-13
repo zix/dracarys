@@ -7,14 +7,14 @@ public class Brand {
 	private Long brandId;
 	private String brandName;
 	private String brandEnName;
+	private String createUser;
 	private Date createTime;
-	
+
 	public Brand(){}
-	public Brand(Long brandId, String brandName, String brandEnName, Date createTime) {
+	public Brand(Long brandId, String brandName, String brandEnName) {
 		this.brandId = brandId;
 		this.brandName = brandName;
 		this.brandEnName = brandEnName;
-		this.createTime = createTime;
 	}
 	public Long getBrandId() {
 		return brandId;
@@ -43,18 +43,15 @@ public class Brand {
 		this.createTime = createTime;
 	}
 	
+	public String getCreateUser() {
+		return createUser;
+	}
+	public void setCreateUser(String createUser) {
+		this.createUser = createUser;
+	}
+	
 	@Override
 	public String toString() {
-		return "Brand [brandId=" + brandId + ", brandName=" + brandName + ", brandEnName=" + brandEnName + ", createTime=" + createTime + "]";
+		return "Brand [brandId=" + brandId + ", brandName=" + brandName + ", brandEnName=" + brandEnName + ", createUser=" + createUser + ", createTime=" + createTime + "]";
 	}
-	public static void test(String s1, int i1) {
-		System.out.println(s1);
-		System.out.println(i1);
-	}
-	public static void main(String[] args) throws Exception{
-		Method m =  Brand.class.getMethod("test", String.class, int.class);
-		m.invoke(null, "a", 10);
-	}
-	
-	
 }

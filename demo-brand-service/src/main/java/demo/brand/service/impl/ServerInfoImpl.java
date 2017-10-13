@@ -8,10 +8,10 @@ import demo.brand.api.IServerInfo;
 public class ServerInfoImpl implements IServerInfo {
 	private AtomicInteger count = new AtomicInteger(0);
 	public String getServerInfo() {
-		return System.getProperty("os.name") + ", " + new Date() + ", " + count.incrementAndGet();
+		return System.getProperty("os.name") + ", " + new Date() + ", invokeCount=" + count.incrementAndGet();
 	}
 
 	public String getServerInfo(String prop) {
-		return System.getProperty(prop) + ", " + count.incrementAndGet();
+		return System.getProperty(prop) + ", invokeCount=" + count.incrementAndGet();
 	}
 }
