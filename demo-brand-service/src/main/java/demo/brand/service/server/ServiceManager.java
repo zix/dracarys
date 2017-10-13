@@ -75,8 +75,7 @@ public class ServiceManager {
 			}
 			for (int i = 0; i < paramTypes.length; i++) {
 				String paramName = (String)AnnotationUtil.getAnnotationValue(paramAnnotations[i][0], "value");
-				String paramValue = paramMap.get(paramName);
-				param[i] = parseParam(paramTypes[i], paramValue);
+				param[i] = parseParam(paramTypes[i], paramMap.get(paramName));
 			}
 		}
 		return param;
