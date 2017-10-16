@@ -458,6 +458,9 @@
 	<modules>
 		<module>../org-dracarys-commons</module>
 		<module>../org-dracarys-io</module>
+		<module>../demo-brand-api</module>
+		<module>../demo-brand-service</module>
+		<module>../demo-brand-client</module>
 	</modules>
 
 	<distributionManagement>
