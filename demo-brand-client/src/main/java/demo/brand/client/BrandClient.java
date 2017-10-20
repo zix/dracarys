@@ -12,12 +12,12 @@ import java.util.Date;
  */
 public class BrandClient {
 
-	public static Object getService(Class<?> clazz) {
-		return ServiceInvocationHandler.getProxy(clazz);
+	public static <T> T getService(Class<T> clazz) {
+		return (T) ServiceInvocationHandler.getProxy(clazz);
 	}
 
 	public static void main(String[] args) {
-		IBrandService brandService = (IBrandService) getService(IBrandService.class);
+		IBrandService brandService = getService(IBrandService.class);
 		Brand brand = new Brand();
 		brand.setBrandId(1L);
 		brand.setBrandName("BrandName");
@@ -28,10 +28,8 @@ public class BrandClient {
 		System.out.println(brand);
 
 
-		IServerInfo si = (IServerInfo) getService(IServerInfo.class);
+		IServerInfo si = getService(IServerInfo.class);
 		System.out.println(si.getServerInfo("os.name"));
 		System.out.println(si.getServerInfo("java.vm.vendor"));
 	}
-
-
 }

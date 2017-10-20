@@ -1,6 +1,5 @@
 package demo.brand.vo;
 
-import java.lang.reflect.Method;
 import java.util.Date;
 
 public class Brand {
