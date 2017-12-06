@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1">
+	<test name="appMoudle1">
+		<parameter name="dataSetFile" value="/dataset/dataset-module1.xml" />
+		<classes>
+			<class name="org.dracarys.commons.xxx" />
+		</classes>
+	</test>
+	<test name="appMoudle2">
+		<parameter name="dataSetFile" value="/dataset/dataset-module2.xml" />
+		<classes>
+			<class name="org.dracarys.commons.xxx" />
+		</classes>
+	</test>
+
+</suite>
