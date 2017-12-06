@@ -8,7 +8,7 @@
  * <author>      <time>      <version>    <desc>
  * 修改人姓名             修改时间            版本号                  描述
  */
-package org.dracarys.commons.impl;
+package org.dracarys.commons.impl.client;
 
 /**
  * 客户端服务工厂<br> .

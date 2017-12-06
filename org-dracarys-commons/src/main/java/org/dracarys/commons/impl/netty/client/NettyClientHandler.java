@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.dracarys.commons.impl.netty;
+package org.dracarys.commons.impl.netty.client;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -22,7 +22,7 @@ import io.netty.channel.ChannelHandlerContext;
 
 import java.util.logging.Logger;
 
-import org.dracarys.commons.impl.ServiceProxyHandler;
+import org.dracarys.commons.impl.client.ServiceProxyHandler;
 
 /**
  * @author lilinfeng

@@ -8,7 +8,7 @@
  * <author>      <time>      <version>    <desc>
  * 修改人姓名             修改时间            版本号                  描述
  */
-package org.dracarys.commons.impl;
+package org.dracarys.commons.impl.client;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationHandler;
@@ -20,8 +20,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import org.dracarys.commons.annotation.EndPoint;
 import org.dracarys.commons.annotation.Param;
 import org.dracarys.commons.annotation.Service;
-import org.dracarys.commons.impl.netty.NettyClient;
-import org.dracarys.commons.impl.netty.NettyConsts;
+import org.dracarys.commons.impl.netty.client.NettyClient;
 import org.dracarys.commons.util.AnnotationUtil;
 
 import com.alibaba.fastjson.JSON;
@@ -33,6 +32,9 @@ import com.alibaba.fastjson.util.TypeUtils;
  * @author chenliang
  */
 public class ServiceProxyHandler implements InvocationHandler {
+    private String host;
+    private int port;
+    
     public static ArrayBlockingQueue<String> message = new ArrayBlockingQueue<>(1);
 
     /**
@@ -56,7 +58,7 @@ public class ServiceProxyHandler implements InvocationHandler {
             request.put("api", apiName);
             request.put("params", params);
 
-            new NettyClient().connect(NettyConsts.PORT, NettyConsts.IP, JSON.toJSONString(request));
+            new NettyClient().connect(port, host, JSON.toJSONString(request));
             String result = message.take();
             ResponseResult response = JSON.parseObject(result, ResponseResult.class);
             if (response.getStatus() == 1) {
@@ -79,5 +81,33 @@ public class ServiceProxyHandler implements InvocationHandler {
         } catch (Exception e) {
             return JSON.parseObject(paramValue, type);
         }
+    }
+
+    /**
+     * @return the host
+     */
+    public String getHost() {
+        return host;
+    }
+
+    /**
+     * @param host the host to set
+     */
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    /**
+     * @return the port
+     */
+    public int getPort() {
+        return port;
+    }
+
+    /**
+     * @param port the port to set
+     */
+    public void setPort(int port) {
+        this.port = port;
     }
 }

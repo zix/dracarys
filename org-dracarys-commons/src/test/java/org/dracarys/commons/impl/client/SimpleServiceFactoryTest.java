@@ -8,10 +8,11 @@
  * <author>      <time>      <version>    <desc>
  * 修改人姓名             修改时间            版本号                  描述
  */
-package org.dracarys.commons.impl;
+package org.dracarys.commons.impl.client;
 
 import java.util.Date;
 
+import org.dracarys.commons.impl.client.SimpleServiceFactory;
 import org.testng.annotations.Test;
 
 import com.alibaba.fastjson.JSONObject;
@@ -27,7 +28,7 @@ import com.alibaba.fastjson.JSONObject;
 public class SimpleServiceFactoryTest {
 
     /**
-     * Test method for {@link org.dracarys.commons.impl.SimpleServiceFactory#getService(java.lang.Class)}.
+     * Test method for {@link org.dracarys.commons.impl.client.SimpleServiceFactory#getService(java.lang.Class)}.
      */
     @Test
     public final void testGetService() throws Exception {

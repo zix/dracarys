@@ -1,4 +1,4 @@
-package org.dracarys.commons.impl.netty;
+package org.dracarys.commons.constant;
 
 /**
  * 常量
@@ -7,7 +7,7 @@ package org.dracarys.commons.impl.netty;
  * @create 2017-10-14 13:52
  */
 public class NettyConsts {
-	public static final int PORT = 8080;
+	public static final int PORT = 13900;
 
 	public static final String IP = "127.0.0.1";
 

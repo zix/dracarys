@@ -1,4 +1,4 @@
-package org.dracarys.commons.impl;
+package org.dracarys.commons.impl.client;
 
 import org.dracarys.commons.annotation.EndPoint;
 import org.dracarys.commons.annotation.Param;

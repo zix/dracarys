@@ -8,9 +8,11 @@
  * <author>      <time>      <version>    <desc>
  * 修改人姓名             修改时间            版本号                  描述
  */
-package org.dracarys.commons.impl;
+package org.dracarys.commons.impl.client;
 
 import java.lang.reflect.Proxy;
+
+import org.dracarys.commons.constant.NettyConsts;
 
 /**
  * 客户端服务获取工厂.<br>
@@ -18,6 +20,16 @@ import java.lang.reflect.Proxy;
  * @author chenliang
  */
 public class SimpleServiceFactory implements ServiceFactory {
+    private String host = NettyConsts.IP;
+    private int port = NettyConsts.PORT;
+
+    public SimpleServiceFactory() {
+    }
+    
+    public SimpleServiceFactory(String host, int port) {
+        this.host = host;
+        this.port = port;
+    }
 
     /**
      * {@inheritDoc}
@@ -50,7 +62,10 @@ public class SimpleServiceFactory implements ServiceFactory {
      * @return 代理对象
      */
     private Object getProxy(Class<?>[] classes) {
-        return Proxy.newProxyInstance(ServiceProxyHandler.class.getClassLoader(), classes, new ServiceProxyHandler());
+        ServiceProxyHandler serviceProxyHandler = new ServiceProxyHandler();
+        serviceProxyHandler.setHost(host);
+        serviceProxyHandler.setPort(port);
+        return Proxy.newProxyInstance(ServiceProxyHandler.class.getClassLoader(), classes, serviceProxyHandler);
     }
 
     /**
@@ -68,5 +83,19 @@ public class SimpleServiceFactory implements ServiceFactory {
     @Override
     public void destroy() {
         // TODO Auto-generated method stub
+    }
+
+    /**
+     * @param host the host to set
+     */
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    /**
+     * @param port the port to set
+     */
+    public void setPort(int port) {
+        this.port = port;
     }
 }

@@ -1,4 +1,4 @@
-package org.dracarys.commons.impl;
+package org.dracarys.commons.impl.client;
 
 public class ResponseResult {
 	private Integer status = 1;
