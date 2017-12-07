@@ -17,18 +17,18 @@
 		<!-- jackson -->
 		<jackson.version>2.7.4</jackson.version>		
 		<!-- logback -->
-		<logback.version>1.1.7</logback.version>		
+		<logback.version>1.2.3</logback.version>		
 	</properties>
 
 	
 	<developers>
 		<developer>
-			<id>000157</id>
-			<name>xxx</name>
+			<id>0001</id>
+			<name>SSC</name>
 			<roles>
 				<role>project manager</role>
 			</roles>
-			<organization>xxx</organization>
+			<organization>chexiang</organization>
 			<email>xxx@xxx.com.cn</email>
 			<properties>
 				<mobile>+86-186-xxxxxxxx</mobile>

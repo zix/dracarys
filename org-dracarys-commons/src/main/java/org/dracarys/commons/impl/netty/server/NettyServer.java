@@ -15,6 +15,9 @@
  */
 package org.dracarys.commons.impl.netty.server;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -30,6 +33,8 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * @version 1.0
  */
 public class NettyServer {
+    /** 记录日志. */
+    private static final Logger LOGGER = LoggerFactory.getLogger(NettyServer.class);
 
     public void bind(int port) throws Exception {
         // 配置服务端的NIO线程组
@@ -43,6 +48,7 @@ public class NettyServer {
                 .childHandler(new ChildChannelHandler());
             // 绑定端口，同步等待成功
             ChannelFuture f = b.bind(port).sync();
+            LOGGER.info("Service successfully started on port " + port);
 
             // 等待服务端监听端口关闭
             f.channel().closeFuture().sync();

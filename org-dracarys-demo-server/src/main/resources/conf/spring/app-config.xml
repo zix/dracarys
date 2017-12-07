@@ -13,17 +13,8 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
     <context:annotation-config/>  <!-- annotation支持 -->
-	<!-- 数据库属性文件
-	<context:property-placeholder location="classpath:conf/mybatis/mysql.properties" ignore-unresolvable="true" order="2" file-encoding="utf-8"/> -->
-	<context:component-scan base-package="com.efuture" />  <!-- 定义bean搜索包 -->
+	<context:component-scan base-package="org.dracarys" />  <!-- 定义bean搜索包 -->
 	<aop:aspectj-autoproxy /> <!-- aop支持 -->
-	<mvc:annotation-driven />  <!-- mvc annotation支持 -->
-	<mvc:resources mapping="/res/**" location="/res/" cache-period="31556926"/>  <!-- 静态资源配置,客户端缓存一年 -->
-
-	<!-- inject some beans -->
-	<!-- mvc验证 -->
-	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>	
-	<bean id="gson" class="com.google.gson.Gson"/>
 	
 <!-- 分支2，分支3 -->
 <!--

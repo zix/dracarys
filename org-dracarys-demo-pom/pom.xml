@@ -17,7 +17,7 @@
 		<!-- jackson -->
 		<jackson.version>2.7.4</jackson.version>		
 		<!-- logback -->
-		<logback.version>1.1.7</logback.version>		
+		<logback.version>1.2.3</logback.version>		
 	</properties>
 
 	
