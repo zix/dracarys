@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
  	<groupId>org.dracarys</groupId>
- 	<artifactId>org-dracarys-demo-pom</artifactId>
+ 	<artifactId>com-dracarys-demo-pom</artifactId>
  	<version>0.0.1-SNAPSHOT</version>
  	<packaging>pom</packaging>
  	<name>dracarys framework pom</name>
@@ -47,7 +47,7 @@
 			
             <dependency>
                 <groupId>org.dracarys</groupId>
-                <artifactId>org-dracarys-demo-api</artifactId>
+                <artifactId>com-dracarys-demo-api</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 		
@@ -475,9 +475,9 @@
 	</build>
 
 	<modules>
-		<module>../org-dracarys-demo-server</module>
-		<module>../org-dracarys-demo-client</module>
-		<module>../org-dracarys-demo-api</module>
+		<module>../com-dracarys-demo-server</module>
+		<module>../com-dracarys-demo-client</module>
+		<module>../com-dracarys-demo-api</module>
 	</modules>
 
 	<distributionManagement>

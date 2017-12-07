@@ -3,21 +3,21 @@
   
   <parent>
     <groupId>org.dracarys</groupId>
-    <artifactId>org-dracarys-demo-pom</artifactId>
+    <artifactId>com-dracarys-demo-pom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../org-dracarys-demo-pom/pom.xml</relativePath>
+    <relativePath>../com-dracarys-demo-pom/pom.xml</relativePath>
   </parent>
   
-  <artifactId>org-dracarys-demo-server</artifactId>
+  <artifactId>com-dracarys-demo-server</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>org-dracarys-demo-server</name>
+  <name>com-dracarys-demo-server</name>
   <description>演示server端</description>
   
     <dependencies>
         <dependency>
             <groupId>org.dracarys</groupId>
-            <artifactId>org-dracarys-demo-api</artifactId>
+            <artifactId>com-dracarys-demo-api</artifactId>
         </dependency>
         
         <!-- ### spring ### -->
