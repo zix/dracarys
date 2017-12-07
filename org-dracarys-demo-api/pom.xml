@@ -8,21 +8,16 @@
     <relativePath>../org-dracarys-demo-pom/pom.xml</relativePath>
   </parent>
   
-  <artifactId>org-dracarys-demo-server</artifactId>
+  <artifactId>org-dracarys-demo-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>org-dracarys-demo-server</name>
-  <description>演示server端</description>
+  <name>org-dracarys-demo-api</name>
+  <description>演示API</description>
   
     <dependencies>
         <dependency>
             <groupId>org.dracarys</groupId>
-            <artifactId>org-dracarys-demo-api</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
+            <artifactId>org-dracarys-commons</artifactId>
         </dependency>
     </dependencies>
   

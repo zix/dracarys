@@ -1,4 +1,4 @@
-package org.dracarys.commons.impl.client;
+package org.dracarys.demo.vo;
 
 import java.util.Date;
 

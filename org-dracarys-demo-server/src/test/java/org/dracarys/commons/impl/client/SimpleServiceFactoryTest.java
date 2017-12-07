@@ -12,7 +12,8 @@ package org.dracarys.commons.impl.client;
 
 import java.util.Date;
 
-import org.dracarys.commons.impl.client.SimpleServiceFactory;
+import org.dracarys.demo.api.IBrandService;
+import org.dracarys.demo.vo.Brand;
 import org.testng.annotations.Test;
 
 import com.alibaba.fastjson.JSONObject;

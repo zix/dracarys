@@ -8,7 +8,6 @@ import java.util.Map;
 
 import org.dracarys.commons.annotation.EndPoint;
 import org.dracarys.commons.annotation.Service;
-import org.dracarys.commons.impl.client.Brand;
 import org.dracarys.commons.impl.client.ResponseResult;
 import org.dracarys.commons.util.AnnotationUtil;
 
@@ -23,7 +22,7 @@ public class ServiceManager {
 	private static Map<String, Method> serviceEndpoints = new HashMap<String, Method>();
 	public static void init() throws Exception{
 		//需要注册的服务
-		String[] services = new String[]{"demo.brand.service.impl.BrandServiceImpl", "demo.brand.service.impl.ServerInfoImpl"};
+		String[] services = new String[]{"org.dracarys.demo.service.impl.BrandServiceImpl", "org.dracarys.demo.service.impl.ServerInfoImpl"};
 		for (String service : services) {
 			Class<?> serviceClass = Class.forName(service);
 			Class<?> interfaceClass = serviceClass.getInterfaces()[0];
@@ -91,26 +90,5 @@ public class ServiceManager {
 		} catch (Exception e) {
 			return JSON.parseObject(paramValue, type);
 		}
-	}
-	
-	public static void main(String[] args) throws Exception{
-		//System.out.println(System.getProperties());
-		
-		ServiceManager.init();
-		Map<String, Object> request = new HashMap<String, Object>();
-		Map<String, Object> params =  new HashMap<String, Object>();
-		request.put("api", "demo.brandService.createBrand");
-		request.put("params", params);
-		
-		params.put("brandInfo", new Brand(null, "别克", "build"));
-		params.put("brandId", "222");
-		params.put("username", "zzz");
-		String requestStr = JSON.toJSONString(request);
-		//String requestStr = "{\"api\":\"demo.serverInfo.getServerInfoByPropName\", \"params\":{\"propName\":\"java.vm.vendor\"}}";
-		String response = ServiceManager.doService(requestStr);
-		System.out.println(response);
-		/*System.out.println(ServiceManager.doService(requestStr));
-		System.out.println(ServiceManager.doService(requestStr));
-		System.out.println(ServiceManager.doService(requestStr));*/
 	}
 }

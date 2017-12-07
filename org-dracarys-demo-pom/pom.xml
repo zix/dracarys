@@ -38,6 +38,19 @@
 	
 	<dependencyManagement>		
 		<dependencies>
+		    <!-- project -->
+			<dependency>
+				<groupId>org.dracarys</groupId>
+				<artifactId>org-dracarys-commons</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			
+            <dependency>
+                <groupId>org.dracarys</groupId>
+                <artifactId>org-dracarys-demo-api</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+		
 			<!-- ### spring ### -->
 		  	<dependency>
 		  		<groupId>org.springframework</groupId>
@@ -464,6 +477,7 @@
 	<modules>
 		<module>../org-dracarys-demo-server</module>
 		<module>../org-dracarys-demo-client</module>
+		<module>../org-dracarys-demo-api</module>
 	</modules>
 
 	<distributionManagement>
