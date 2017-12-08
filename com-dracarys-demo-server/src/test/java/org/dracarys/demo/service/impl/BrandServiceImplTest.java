@@ -8,10 +8,11 @@
  * <author>      <time>      <version>    <desc>
  * 修改人姓名             修改时间            版本号                  描述
  */
-package org.dracarys.commons.impl.client;
+package org.dracarys.demo.service.impl;
 
 import java.util.Date;
 
+import org.dracarys.commons.impl.client.SimpleServiceFactory;
 import org.dracarys.demo.api.IBrandService;
 import org.dracarys.demo.vo.Brand;
 import org.testng.annotations.Test;
@@ -26,7 +27,7 @@ import com.alibaba.fastjson.JSONObject;
  * @see [相关类/方法]（可选）
  * @since [产品/模块版本] （可选）
  */
-public class SimpleServiceFactoryTest {
+public class BrandServiceImplTest {
 
     /**
      * Test method for {@link org.dracarys.commons.impl.client.SimpleServiceFactory#getService(java.lang.Class)}.
