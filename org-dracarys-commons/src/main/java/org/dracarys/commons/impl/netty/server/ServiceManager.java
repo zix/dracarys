@@ -18,6 +18,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.util.TypeUtils;
 
 public class ServiceManager {
+    
     public static final TypeReference<Map<String, String>> STRING_MAP = new TypeReference<Map<String, String>>() {
     };
     private static Map<Class<?>, Object> serviceInstans = new HashMap<Class<?>, Object>();
@@ -29,7 +30,7 @@ public class ServiceManager {
             Class<?> serviceClass = Class.forName(object.getClass().getName());
             Class<?> interfaceClass = serviceClass.getInterfaces()[0];
             // 创建服务实例
-            serviceInstans.put(interfaceClass, serviceClass.newInstance());
+            serviceInstans.put(interfaceClass, object);
             // 注册服务
             String serviceName = (String) AnnotationUtil.getAnnotationValue(interfaceClass, Service.class, "value");
             for (Method m : interfaceClass.getMethods()) {
@@ -40,7 +41,6 @@ public class ServiceManager {
     }
 
     public static String doService(String requestStr) {
-        System.out.println("---doService START: " + requestStr);
         ResponseResult response = new ResponseResult();
         try {
             Map<String, String> requestInfo = JSON.parseObject(requestStr, STRING_MAP);
@@ -60,7 +60,6 @@ public class ServiceManager {
 
         }
         String responseStr = JSON.toJSONString(response, SerializerFeature.WriteDateUseDateFormat);
-        System.out.println("---doService END: " + responseStr);
         return responseStr;
     }
 
