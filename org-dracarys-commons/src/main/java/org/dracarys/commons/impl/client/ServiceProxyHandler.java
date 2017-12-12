@@ -43,15 +43,19 @@ public class ServiceProxyHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         EndPoint endpoint = AnnotationUtil.getAnnotation(method.getAnnotations(), EndPoint.class);
         Service service = AnnotationUtil.getAnnotation(method.getDeclaringClass().getAnnotations(), Service.class);
+        
         if (service != null && endpoint != null) {
             String apiName = service.value() + "." + endpoint.value();
             Annotation[][] annotations = method.getParameterAnnotations();
+            
             Map<String, Object> params = new HashMap<>();
-            for (int i = 0; i < args.length; i++) {
-                Param param = AnnotationUtil.getAnnotation(annotations[i], Param.class);
-                if (param == null)
-                    continue;
-                params.put(param.value(), args[i]);
+            if (null != args) {
+                for (int i = 0; i < args.length; i++) {
+                    Param param = AnnotationUtil.getAnnotation(annotations[i], Param.class);
+                    if (param == null)
+                        continue;
+                    params.put(param.value(), args[i]);
+                }
             }
 
             Map<String, Object> request = new HashMap<>();

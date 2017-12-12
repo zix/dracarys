@@ -11,5 +11,5 @@ public interface IServerInfo {
 	public String getServerInfo();
 	
 	@EndPoint("getServerInfoByPropName")
-	public String getServerInfo(@Param("propName") String prop);
+	public String getServerInfoByPropName(@Param("propName") String prop);
 }

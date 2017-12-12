@@ -14,7 +14,7 @@ public class ServerInfoImpl implements IServerInfo {
         return System.getProperty("os.name") + ", " + new Date() + ", invokeCount=" + count.incrementAndGet();
     }
 
-    public String getServerInfo(String prop) {
+    public String getServerInfoByPropName(String prop) {
         return System.getProperty(prop) + ", invokeCount=" + count.incrementAndGet();
     }
 }

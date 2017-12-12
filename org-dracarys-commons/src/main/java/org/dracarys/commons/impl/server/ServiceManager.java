@@ -1,4 +1,4 @@
-package org.dracarys.commons.impl.netty.server;
+package org.dracarys.commons.impl.server;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
