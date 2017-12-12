@@ -4,7 +4,7 @@
  	<artifactId>com-dracarys-demo-pom</artifactId>
  	<version>0.0.1-SNAPSHOT</version>
  	<packaging>pom</packaging>
- 	<name>dracarys framework pom</name>
+ 	<name>com-dracarys-demo-pom</name>
 	<description>The parent of every module</description>
 	
 	<properties>

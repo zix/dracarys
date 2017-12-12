@@ -26,14 +26,15 @@ import com.alibaba.fastjson.JSONObject;
  * @since [产品/模块版本] （可选）
  */
 public class AlgorithmServiceImplTest {
+    SimpleServiceFactory local = new SimpleServiceFactory("127.0.0.1", 13900);
+    SimpleServiceFactory server = new SimpleServiceFactory("10.32.172.121", 13900);
 
     /**
      * Test method for {@link org.dracarys.demo.service.impl.AlgorithmServiceImpl#bounceCount(int, int)}.
      */
     @Test
     public final void testBounceCount() throws Exception {
-        SimpleServiceFactory simpleServiceFactory = new SimpleServiceFactory();
-        IAlgorithmService service = simpleServiceFactory.getService(IAlgorithmService.class);
+        IAlgorithmService service = server.getService(IAlgorithmService.class);
         Bounce bounceCount = service.bounceCount(1000, 10);
         System.out.println(JSONObject.toJSONString(bounceCount));
     }
