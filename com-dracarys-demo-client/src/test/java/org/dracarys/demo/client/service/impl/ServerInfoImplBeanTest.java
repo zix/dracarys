@@ -8,10 +8,11 @@
  * <author>      <time>      <version>    <desc>
  * 修改人姓名             修改时间            版本号                  描述
  */
-package org.dracarys.demo.service.impl;
+package org.dracarys.demo.client.service.impl;
 
-import org.dracarys.commons.impl.client.SimpleServiceFactory;
 import org.dracarys.demo.api.IServerInfo;
+import org.dracarys.demo.client.config.BaseTestConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.Test;
 
 import com.alibaba.fastjson.JSONObject;
@@ -24,18 +25,17 @@ import com.alibaba.fastjson.JSONObject;
  * @see [相关类/方法]（可选）
  * @since [产品/模块版本] （可选）
  */
-public class ServerInfoImplTest {
-    SimpleServiceFactory local = new SimpleServiceFactory("127.0.0.1", 13900);
-    SimpleServiceFactory server = new SimpleServiceFactory("10.32.172.121", 13900);
-
+public class ServerInfoImplBeanTest extends BaseTestConfig {
+    @Autowired
+    IServerInfo iServerInfo;
+    
     /**
      * Test method for {@link org.dracarys.demo.service.impl.ServerInfoImpl#getServerInfo()}.
      */
     @Test
     public final void testGetServerInfo() throws Exception {
-        IServerInfo service = local.getService(IServerInfo.class);
-        String serverInfo = service.getServerInfo();
-        System.out.println(JSONObject.toJSONString(serverInfo));
+        String serverInfo = iServerInfo.getServerInfo();
+        LOGGER.info("=>"+JSONObject.toJSONString(serverInfo));
     }
 
     /**
@@ -43,9 +43,8 @@ public class ServerInfoImplTest {
      */
     @Test
     public final void testGetServerInfoString() throws Exception {
-        IServerInfo service = local.getService(IServerInfo.class);
-        System.out.println(service.getServerInfoByPropName("os.name"));
-        System.out.println(service.getServerInfoByPropName("java.vm.vendor"));
+        LOGGER.info("=>"+iServerInfo.getServerInfoByPropName("os.name"));
+        LOGGER.info("=>"+iServerInfo.getServerInfoByPropName("java.vm.vendor"));
     }
-
+    
 }

@@ -8,7 +8,7 @@
  * <author>      <time>      <version>    <desc>
  * 修改人姓名             修改时间            版本号                  描述
  */
-package org.dracarys.demo.service.impl;
+package org.dracarys.demo.client.service.impl;
 
 import org.dracarys.commons.impl.client.SimpleServiceFactory;
 import org.dracarys.demo.api.IAlgorithmService;

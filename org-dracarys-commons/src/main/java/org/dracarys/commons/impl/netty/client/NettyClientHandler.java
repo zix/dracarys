@@ -20,9 +20,9 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
-import java.util.logging.Logger;
-
 import org.dracarys.commons.impl.client.ServiceProxyHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author lilinfeng
@@ -30,8 +30,9 @@ import org.dracarys.commons.impl.client.ServiceProxyHandler;
  * @version 1.0
  */
 public class NettyClientHandler extends ChannelHandlerAdapter {
+    /** 记录日志. */
+    private static final Logger LOGGER = LoggerFactory.getLogger(NettyClientHandler.class);
 
-    private static final Logger logger = Logger.getLogger(NettyClientHandler.class.getName());
 
     private final ByteBuf firstMessage;
 
@@ -63,7 +64,7 @@ public class NettyClientHandler extends ChannelHandlerAdapter {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         // 释放资源
-        logger.warning("Unexpected exception from downstream : " + cause.getMessage());
+        LOGGER.error("Unexpected exception from downstream : ", cause);
         ctx.close();
     }
 }

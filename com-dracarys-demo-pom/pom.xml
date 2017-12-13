@@ -482,7 +482,6 @@
 
 	<modules>
 		<module>../com-dracarys-demo-server</module>
-		<module>../com-dracarys-demo-client</module>
 		<module>../com-dracarys-demo-api</module>
 		<module>../org-dracarys-commons</module>
 	</modules>

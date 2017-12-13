@@ -10,8 +10,14 @@
  */
 package org.dracarys.demo.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.dracarys.demo.api.IAlgorithmService;
 import org.dracarys.demo.vo.Bounce;
+import org.dracarys.demo.vo.Profit;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
@@ -24,6 +30,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AlgorithmServiceImpl implements IAlgorithmService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AlgorithmServiceImpl.class);
 
     /**
      * {@inheritDoc}
@@ -40,6 +47,28 @@ public class AlgorithmServiceImpl implements IAlgorithmService {
         bounce.setHeight(h);
         bounce.setCount(c);
         return bounce;
+    }
+
+    /** 
+     * {@inheritDoc}}
+     * @see org.dracarys.demo.api.IAlgorithmService#boseraFundB(java.lang.Double, java.lang.Double, int)
+     */
+    @Override
+    public List<Profit> boseraFundB(Double cost, Double rate, int yearCount) {
+        LOGGER.info("参数: {}, {}, {}", cost, rate, yearCount);
+        Double total = cost;
+        List<Profit>  profits = new ArrayList<>();
+        for (int i = 1; i <= yearCount; i++) {
+            Double old = total;
+            total += total * rate;
+            Double incr = total-old;
+            Profit profit = new Profit();
+            profit.setYear(i);
+            profit.setGain(total);
+            profit.setGainIncrement(incr);
+            profits.add(profit);
+        }
+        return profits;
     }
 
 }

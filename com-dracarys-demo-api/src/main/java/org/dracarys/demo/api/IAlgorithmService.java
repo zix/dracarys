@@ -10,10 +10,13 @@
  */
 package org.dracarys.demo.api;
 
+import java.util.List;
+
 import org.dracarys.commons.annotation.EndPoint;
 import org.dracarys.commons.annotation.Param;
 import org.dracarys.commons.annotation.Service;
 import org.dracarys.demo.vo.Bounce;
+import org.dracarys.demo.vo.Profit;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -35,4 +38,7 @@ public interface IAlgorithmService {
      */
     @EndPoint("bounceCount")
     Bounce bounceCount(@Param("height") int height, @Param("count") int count);
+    
+    @EndPoint("boseraFundB")
+    List<Profit> boseraFundB(@Param("cost") Double cost, @Param("rate") Double rate, @Param("year") int yearCount);
 }
