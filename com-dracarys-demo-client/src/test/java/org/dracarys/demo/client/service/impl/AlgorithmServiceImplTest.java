@@ -33,8 +33,8 @@ public class AlgorithmServiceImplTest {
      * Test method for {@link org.dracarys.demo.service.impl.AlgorithmServiceImpl#bounceCount(int, int)}.
      */
     @Test
-    public final void testBounceCount() throws Exception {
-        IAlgorithmService service = server.getService(IAlgorithmService.class);
+    public final void testBounclocaleCount() throws Exception {
+        IAlgorithmService service = local.getService(IAlgorithmService.class);
         Bounce bounceCount = service.bounceCount(1000, 10);
         System.out.println(JSONObject.toJSONString(bounceCount));
     }

@@ -27,7 +27,7 @@ public class ServiceManager {
     public static void init(Collection<Object> objects) throws Exception {
         // 需要注册的服务
         for (Object object : objects) {
-            Class<?> serviceClass = Class.forName(object.getClass().getName());
+            Class<?> serviceClass = object.getClass();
             Class<?> interfaceClass = serviceClass.getInterfaces()[0];
             // 创建服务实例
             serviceInstans.put(interfaceClass, object);

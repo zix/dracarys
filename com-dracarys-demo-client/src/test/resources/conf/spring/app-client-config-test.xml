@@ -21,8 +21,8 @@
     <import resource="classpath:app-security-config.xml" /> -->
     
     <bean class="org.dracarys.commons.impl.client.BeanAnnotationScanAndRegister">
-        <!-- <property name="host" value="127.0.0.1"/> -->
-        <property name="host" value="10.32.172.121"/>
+        <property name="host" value="127.0.0.1"/>
+        <!-- <property name="host" value="10.32.172.121"/> -->
         <property name="port" value="13900"/>
         <property name="scanPackage" value="org.dracarys"/>
     </bean>

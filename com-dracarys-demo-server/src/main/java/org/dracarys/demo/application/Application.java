@@ -6,6 +6,7 @@ import org.dracarys.commons.annotation.Service;
 import org.dracarys.commons.impl.netty.server.NettyServer;
 import org.dracarys.commons.impl.server.ServiceManager;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
@@ -17,5 +18,7 @@ public class Application {
 
         ServiceManager.init(beansWithAnnotation.values());
         new NettyServer().bind(PORT);
+        
+        ((ConfigurableApplicationContext)ctx).close();
     }
 }
