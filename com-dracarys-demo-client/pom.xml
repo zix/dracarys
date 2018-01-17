@@ -72,6 +72,12 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
         </dependency>
+        
+        <!-- fastjson -->
+        <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>fastjson</artifactId>
+        </dependency>
     </dependencies>
   
 </project>
