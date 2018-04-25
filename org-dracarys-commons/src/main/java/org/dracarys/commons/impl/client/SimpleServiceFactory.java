@@ -1,7 +1,7 @@
 /*
- * Copyright (C), 2013-2017, 上海赛可电子商务有限公司
+ * Copyright (C), 2013-2017
  * FileName: SimpleServiceFactory.java
- * Author:   chenliang
+ * Author:   ZIX
  * Date:     2017年12月5日 下午3:40:12
  * Description: //模块目的、功能描述      
  * History: //修改记录

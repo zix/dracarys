@@ -1,7 +1,7 @@
 /*
  * Copyright (C), 2013-2017
  * FileName: AlgorithmService.java
- * Author:   chenliang
+ * Author:   ZIX
  * Date:     2017年12月8日 下午1:13:49
  * Description: //模块目的、功能描述      
  * History: //修改记录

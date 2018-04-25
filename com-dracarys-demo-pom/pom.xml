@@ -486,16 +486,4 @@
 		<module>../org-dracarys-commons</module>
 	</modules>
 
-	<distributionManagement>
-		<repository>
-			<id>mms_releases</id>
-			<url>http://maven.dds.com/nexus/content/repositories/saic-service-api-release/</url>
-		</repository>
-		<snapshotRepository>
-			<id>mms_snapshots</id>
-			<url>http://maven.dds.com/nexus/content/repositories/saic-service-api-snapshot/</url>
-		</snapshotRepository>
-	</distributionManagement>
-
-
 </project>

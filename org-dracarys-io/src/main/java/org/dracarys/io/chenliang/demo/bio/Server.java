@@ -1,7 +1,7 @@
 /*
- * Copyright (C), 2013-2017, 上海赛可电子商务有限公司
+ * Copyright (C), 2013-2017
  * FileName: Server.java
- * Author:   chenliang
+ * Author:   ZIX
  * Date:     2017年9月11日 上午10:33:40
  * Description: //模块目的、功能描述      
  * History: //修改记录

@@ -1,7 +1,7 @@
 /*
- * Copyright (C), 2013-2017, 上海赛可电子商务有限公司
+ * Copyright (C), 2013-2017
  * FileName: ServiceProxyHandler.java
- * Author:   chenliang
+ * Author:   ZIX
  * Date:     2017年11月22日 下午5:39:42
  * Description: //模块目的、功能描述      
  * History: //修改记录
