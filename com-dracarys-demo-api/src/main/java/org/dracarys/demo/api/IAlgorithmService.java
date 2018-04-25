@@ -1,5 +1,5 @@
 /*
- * Copyright (C), 2013-2017, 上海赛可电子商务有限公司
+ * Copyright (C), 2013-2017
  * FileName: AlgorithmService.java
  * Author:   chenliang
  * Date:     2017年12月8日 下午1:13:49
